@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jQuery | Basics & Events</title>
+	<script src="C:/Users/Manikanth/Desktop/Practices on Full stack web developement/JQueryDOMManuplation/jquery-3.6.0.min.js"></script>
+	<style type="text/css">
+		#square{
+			background: red;
+			width: 200px;
+			height: 200px;
+		}
+
+	</style>
+</head>
+<body>
+	<p class="p1"> This is a paragraph </p>
+	<p> This is another paragraph </p> 
+	<button id="myBtn">Click</button>
+	<br><br>
+	<div id="square"></div>
+	<br><br>
+	<div id="output"></div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			/*alert(1);
+			$('.p1').hide();
+			$('p').show(); */
+
+			/*$('#myBtn').click(function(){
+				alert('You Clicked!');
+			});
+
+			$('#myBtn').on('click',function(){
+				//alert('You  Clicked!');
+				$('.p1').toggle();
+			});
+			
+			$('#myBtn').on('dblclick',function(){
+				$('.p1').toggle();
+			});
+
+
+			$('#square').hover(function(){
+				$(this).text('Hovering....');
+			}, function(){
+				$(this).text('');
+			});
+			
+
+			$('#square').mouseenter(function(){
+				$(this).text('Hovering...');
+				
+				$('#square').mouseout(function(){
+					$(this).text('');
+				});
+			});
+
+
+			$('#square').mousedown(function(){
+				$(this).text('Mouse Down');
+				
+				$('#square').mouseup(function(){
+					$(this).text('');
+				});
+			});
+
+			*/
+			$('#square').mousemove(function(){
+				var msg	= "Mouse Position - ";
+				msg += event.pageX + " " + event.pageY;
+				$('#output').html("<div>"+msg+"</div>");
+			});
+
+		});
+	</script>
+</body>
+</html> 

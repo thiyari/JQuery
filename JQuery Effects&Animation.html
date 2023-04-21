@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Effects & Animation</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.js"
+  	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  	crossorigin="anonymous"></script>
+  	<style type="text/css">
+  		.square, .square2{
+  			width: 100px;
+  			height: 100px;
+  			background: black;
+  			position: relative;
+  		}
+  	</style>
+</head>
+<body>
+	<button id="btnHide">Hide</button>
+	<button id="btnShow">Show</button>
+	<button id="btnTog">Toggle</button>
+	<button id="btnFadeOut">Fade Out</button>
+	<button id="btnFadeIn">Fade In</button>
+	<button id="btnFadeTog">Fade Toggle</button>
+	<button id="btnSlideUp">Slide Up</button>
+	<button id="btnSlideDown">Slide Down</button>
+	<button id="btnSlideTog">Slide Toggle</button>
+	<button id="btnStop">Stop</button>
+	<p class="p1">
+		As Michael Harvey writes, paragraphs are “in essence—a form of punctuation, and like other forms of punctuation they are meant to make written material easy to read.”[1] Effective paragraphs are the fundamental units of academic writing; consequently, the thoughtful, multifaceted arguments that your professors expect depend on them. Without good paragraphs, you simply cannot clearly convey sequential points and their relationships to one another. 
+	</p>
+	<br><br>
+	<button id="anim">Animate</button>
+	<br><br>
+	<div class="square"></div>
+	<br><br>
+	<button id="anim2">Animate</button>
+	<br><br>
+	<div class="square2"></div>
+
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#btnHide').click(function(){
+				$('.p1').hide();
+			});
+			$('#btnShow').click(function(){
+				$('.p1').show();
+			});
+			$('#btnTog').click(function(){
+				$('.p1').toggle();
+			});
+			$('#btnFadeOut').click(function(){
+				$('.p1').fadeOut(2000);
+			});
+			$('#btnFadeIn').click(function(){
+				$('.p1').fadeIn(2000);
+			});
+			$('#btnFadeTog').click(function(){
+				$('.p1').fadeToggle(2000);
+			});
+			$('#btnSlideUp').click(function(){
+				$('.p1').slideUp(4000);
+			});
+			$('#btnSlideDown').click(function(){
+				$('.p1').slideDown(4000);
+			});
+			$('#btnSlideTog').click(function(){
+				$('.p1').slideToggle(4000);
+			});
+			$('#btnStop').click(function(){
+				$('.p1').stop();
+			});
+
+			$('#anim').click(function(){
+				$('.square').animate({
+					left: '+=250px',
+					opacity: '0.5',
+					height: '+=100px',
+					width: '+=100px'
+				}, 'fast');
+			}); 
+
+			$('#anim2').click(function(){
+				var div	= $('.square2');
+				div.animate({height: '400px',opacity: '0.4'},'slow');
+				div.animate({width: '400px',opacity: '0.8'},'slow');
+				div.animate({height: '100px',opacity: '0.4'},'slow');
+				div.animate({width: '100px',opacity: '0.8'},'slow');
+			});
+		});
+	</script>
+</body>
+</html> 
